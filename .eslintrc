@@ -1,0 +1,51 @@
+{
+  "env": {
+      "browser": false,
+      "es6": true
+  },
+  "extends": [
+      "google",
+      "plugin:@typescript-eslint/recommended"
+  ],
+  "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly",
+      "require": "readonly",
+      "process": "readonly",
+      "env": "readonly",
+      "__dirname": "readonly",
+      "module": "readonly",
+      "exports": "readonly",
+      "console": "readonly"
+  },
+  "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "project": "./tsconfig.json"
+  },
+  "rules": {
+    "require-jsdoc": "off",
+    "new-cap": "off",
+    "object-curly-spacing": "off",
+    "comma-dangle": "off",
+    "no-unused-vars": ["warn", {"caughtErrors":"all", "caughtErrorsIgnorePattern": "^unused($|[A-Z].*$)", "argsIgnorePattern": "^unused($|[A-Z].*$)", "varsIgnorePattern": "^unused($|[A-Z].*$)" }],
+    "no-undef": "error",
+    "arrow-parens": "off",
+    "max-len": "warn",
+    "indent": ["warn", 2],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", {"caughtErrors":"all", "caughtErrorsIgnorePattern": "^unused($|[A-Z].*$)", "argsIgnorePattern": "^unused($|[A-Z].*$)", "varsIgnorePattern": "^unused($|[A-Z].*$)" }]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+        "@typescript-eslint/no-var-requires": "warn"
+      }
+    }
+  ],
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser"
+}
